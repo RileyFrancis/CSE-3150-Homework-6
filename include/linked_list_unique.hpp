@@ -8,7 +8,7 @@ private:
     struct Node {
         T value;
         std::unique_ptr<Node> next;
-        Node(int value) : value(value), next(nullptr) {}
+        Node(T value) : value(value), next(nullptr) {}
     };
 
     std::unique_ptr<Node> head_;
@@ -34,7 +34,7 @@ public:
             tail_ = raw;
         }
     }
-    void print() {
+    void print() const {
         Node* current = head_.get();
 
         while (current != nullptr) {
